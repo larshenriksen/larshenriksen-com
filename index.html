@@ -18,6 +18,11 @@
             "name": "Vital Learning Danmark",
             "url": "https://vitallearning.dk"
         },
+        "founder": {
+            "@type": "Organization",
+            "name": "Vital Learning Danmark",
+            "url": "https://vitallearning.dk"
+        },
         "url": "https://larshenriksen.com",
         "sameAs": [
             "https://www.linkedin.com/in/larsh/",
@@ -77,12 +82,12 @@
                 "credentialCategory": "Professional Certification"
             }
         ],
-        "description": "Lars Rothschild Henriksen helps leaders and knowledge workers in Denmark achieve clarity, focus, and better decisions through Getting Things Done (GTD) and Crucial Conversations methodologies."
+        "description": "Lars Rothschild Henriksen helps leaders and knowledge workers in Denmark achieve clarity, focus, and better decisions through Getting Things Done (GTD) and Crucial Conversations methodologies. Using GTD since 2008."
     }
     </script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
     <style>
         * {
             margin: 0;
@@ -91,19 +96,16 @@
         }
 
         :root {
-            --ink: #1a1916;
-            --ink-soft: #3d3b36;
-            --ink-muted: #7a776e;
-            --stone: #a8a49a;
-            --parchment: #f7f6f3;
-            --cream: #fffef9;
-            --warm-white: #fdfcfa;
-            --gtd-orange: #c4520a;
-            --crucial-red: #b8232e;
-            --crucial-green: #4a8a52;
-            --accent-blue: #3d6b99;
-            --border-subtle: rgba(26, 25, 22, 0.08);
-            --border-medium: rgba(26, 25, 22, 0.12);
+            --earth: #3d3024;
+            --bark: #5c4a3d;
+            --moss: #6b7c5e;
+            --sage: #9ba88e;
+            --sand: #c4b8a5;
+            --wheat: #e8dfd3;
+            --cream: #f5f1eb;
+            --milk: #fdfbf8;
+            --terracotta: #c67b5c;
+            --clay: #a85d42;
         }
 
         html {
@@ -111,21 +113,31 @@
         }
 
         body {
-            font-family: 'Jost', sans-serif;
-            font-weight: 300;
+            font-family: 'DM Sans', -apple-system, sans-serif;
+            font-weight: 400;
             line-height: 1.8;
-            color: var(--ink);
-            background: var(--cream);
-            font-size: 16px;
-            letter-spacing: 0.01em;
-            -webkit-font-smoothing: antialiased;
+            color: var(--earth);
+            background: var(--milk);
+            font-size: 17px;
         }
 
-        /* Typography */
         h1, h2, h3 {
-            font-family: 'Cormorant Garamond', Georgia, serif;
+            font-family: 'Libre Baskerville', Georgia, serif;
             font-weight: 400;
-            letter-spacing: -0.02em;
+        }
+
+        /* Organic texture background */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+            opacity: 0.03;
+            pointer-events: none;
+            z-index: -1;
         }
 
         /* Navigation */
@@ -133,35 +145,26 @@
             position: fixed;
             top: 0;
             width: 100%;
-            background: rgba(253, 252, 250, 0.92);
-            backdrop-filter: blur(20px);
-            -webkit-backdrop-filter: blur(20px);
-            padding: 1.5rem 0;
+            background: rgba(253, 251, 248, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 1.25rem 0;
             z-index: 1000;
-            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-
-        nav.scrolled {
-            padding: 1rem 0;
-            box-shadow: 0 1px 0 var(--border-subtle);
         }
 
         nav .container {
-            max-width: 1100px;
+            max-width: 1000px;
             margin: 0 auto;
-            padding: 0 3rem;
+            padding: 0 2.5rem;
             display: flex;
             justify-content: space-between;
             align-items: center;
         }
 
         nav .logo {
-            font-family: 'Cormorant Garamond', Georgia, serif;
-            font-weight: 500;
-            font-size: 1.25rem;
-            color: var(--ink);
+            font-family: 'Libre Baskerville', Georgia, serif;
+            font-size: 1.15rem;
+            color: var(--earth);
             text-decoration: none;
-            letter-spacing: 0.02em;
         }
 
         nav ul {
@@ -172,266 +175,205 @@
 
         nav a {
             text-decoration: none;
-            color: var(--ink-muted);
-            font-weight: 400;
-            font-size: 0.8rem;
-            letter-spacing: 0.08em;
-            text-transform: uppercase;
+            color: var(--bark);
+            font-size: 0.9rem;
             transition: color 0.3s ease;
-            position: relative;
-        }
-
-        nav ul a::after {
-            content: '';
-            position: absolute;
-            bottom: -4px;
-            left: 0;
-            width: 0;
-            height: 1px;
-            background: var(--ink);
-            transition: width 0.3s ease;
-        }
-
-        nav ul a:hover::after {
-            width: 100%;
         }
 
         nav a:hover {
-            color: var(--ink);
+            color: var(--terracotta);
         }
 
-        /* Main content */
-        main {
-            max-width: 1100px;
-            margin: 0 auto;
-            padding: 0 3rem;
-        }
-
-        /* Hero Section */
+        /* Hero */
         .hero {
             min-height: 100vh;
             display: flex;
             align-items: center;
-            padding: 10rem 0 8rem;
+            justify-content: center;
+            padding: 8rem 2.5rem;
+            text-align: center;
         }
 
-        .hero-content {
-            display: grid;
-            grid-template-columns: 1fr 1.5fr;
-            gap: 6rem;
-            align-items: center;
-            width: 100%;
+        .hero-inner {
+            max-width: 800px;
         }
 
         .hero-image {
+            width: 180px;
+            height: 180px;
+            margin: 0 auto 3rem;
             position: relative;
         }
 
         .hero-image::before {
             content: '';
             position: absolute;
-            top: -20px;
-            left: -20px;
-            right: 20px;
-            bottom: 20px;
-            border: 1px solid var(--border-medium);
-            z-index: -1;
+            top: -15px;
+            left: -15px;
+            right: -15px;
+            bottom: -15px;
+            border: 2px solid var(--sage);
+            border-radius: 50%;
+            opacity: 0.5;
+        }
+
+        .hero-image::after {
+            content: '';
+            position: absolute;
+            top: -30px;
+            left: -30px;
+            right: -30px;
+            bottom: -30px;
+            border: 1px solid var(--sand);
+            border-radius: 50%;
+            opacity: 0.3;
         }
 
         .hero-image img {
             width: 100%;
-            aspect-ratio: 1;
+            height: 100%;
+            border-radius: 50%;
             object-fit: cover;
-            filter: grayscale(15%) contrast(1.02);
-            transition: filter 0.6s ease;
         }
 
-        .hero-image:hover img {
-            filter: grayscale(0%) contrast(1);
-        }
-
-        .hero-text {
-            padding: 2rem 0;
-        }
-
-        .hero-eyebrow {
-            font-size: 0.75rem;
-            letter-spacing: 0.2em;
-            text-transform: uppercase;
-            color: var(--stone);
-            margin-bottom: 1.5rem;
-            font-weight: 400;
-        }
-
-        .hero-text h1 {
-            font-size: clamp(2.5rem, 5vw, 3.5rem);
-            font-weight: 300;
+        .hero h1 {
+            font-size: 3rem;
+            line-height: 1.2;
             margin-bottom: 1rem;
-            line-height: 1.15;
-            color: var(--ink);
+            color: var(--earth);
         }
 
-        .hero-text .title {
-            font-family: 'Cormorant Garamond', Georgia, serif;
-            font-size: 1.35rem;
+        .hero-subtitle {
+            font-family: 'Libre Baskerville', Georgia, serif;
             font-style: italic;
-            color: var(--ink-soft);
-            margin-bottom: 2.5rem;
-            font-weight: 300;
+            font-size: 1.2rem;
+            color: var(--moss);
+            margin-bottom: 2rem;
         }
 
-        .hero-text p {
-            font-size: 1.05rem;
-            color: var(--ink-muted);
-            max-width: 440px;
+        .hero-description {
+            font-size: 1.1rem;
+            color: var(--bark);
+            max-width: 550px;
+            margin: 0 auto 3rem;
             line-height: 1.9;
         }
 
         .hero-buttons {
-            margin-top: 3rem;
             display: flex;
             gap: 1.5rem;
-            align-items: center;
+            justify-content: center;
         }
 
         .btn {
             display: inline-block;
+            padding: 1rem 2rem;
             text-decoration: none;
-            font-weight: 400;
-            font-size: 0.8rem;
-            letter-spacing: 0.12em;
-            text-transform: uppercase;
-            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            font-size: 0.9rem;
+            font-weight: 500;
+            border-radius: 50px;
+            transition: all 0.3s ease;
         }
 
         .btn-primary {
-            padding: 1.1rem 2.2rem;
-            background: var(--ink);
-            color: var(--cream);
-            position: relative;
-            overflow: hidden;
+            background: var(--terracotta);
+            color: var(--milk);
         }
 
-        .btn-primary::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: var(--gtd-orange);
-            transform: translateX(-101%);
-            transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-
-        .btn-primary span {
-            position: relative;
-            z-index: 1;
-        }
-
-        .btn-primary:hover::before {
-            transform: translateX(0);
+        .btn-primary:hover {
+            background: var(--clay);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(166, 93, 66, 0.25);
         }
 
         .btn-secondary {
-            color: var(--ink-muted);
-            padding: 1.1rem 0;
-            position: relative;
-        }
-
-        .btn-secondary::after {
-            content: '';
-            position: absolute;
-            bottom: 0.9rem;
-            left: 0;
-            width: 100%;
-            height: 1px;
-            background: var(--stone);
-            transform: scaleX(0.3);
-            transform-origin: left;
-            transition: transform 0.4s ease;
+            background: transparent;
+            color: var(--bark);
+            border: 1.5px solid var(--sand);
         }
 
         .btn-secondary:hover {
-            color: var(--ink);
+            border-color: var(--bark);
+            background: var(--cream);
         }
 
-        .btn-secondary:hover::after {
-            transform: scaleX(1);
-            background: var(--ink);
+        /* Main */
+        main {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 2.5rem;
         }
 
-        /* Sections */
+        /* Section styling */
         section {
-            padding: 7rem 0;
-        }
-
-        .section-divider {
-            width: 60px;
-            height: 1px;
-            background: var(--border-medium);
-            margin-bottom: 4rem;
+            padding: 6rem 0;
         }
 
         .section-header {
+            text-align: center;
             margin-bottom: 4rem;
         }
 
-        .section-eyebrow {
-            font-size: 0.7rem;
-            letter-spacing: 0.25em;
-            text-transform: uppercase;
-            color: var(--stone);
-            margin-bottom: 1rem;
-            font-weight: 400;
+        .section-icon {
+            width: 50px;
+            height: 50px;
+            margin: 0 auto 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .section-icon svg {
+            width: 100%;
+            height: 100%;
+            stroke: var(--sage);
+            fill: none;
+            stroke-width: 1;
         }
 
         .section-title {
-            font-size: clamp(2rem, 4vw, 2.75rem);
-            font-weight: 300;
-            color: var(--ink);
-            line-height: 1.2;
+            font-size: 2.25rem;
+            margin-bottom: 1rem;
+            color: var(--earth);
         }
 
         .section-subtitle {
-            font-family: 'Cormorant Garamond', Georgia, serif;
-            color: var(--ink-muted);
-            font-size: 1.2rem;
-            max-width: 500px;
-            margin-top: 1.25rem;
+            font-family: 'Libre Baskerville', Georgia, serif;
             font-style: italic;
-            font-weight: 300;
+            color: var(--moss);
+            font-size: 1.1rem;
         }
 
-        /* About Section */
+        /* About */
         .about-content {
             display: grid;
-            grid-template-columns: 1.4fr 1fr;
-            gap: 6rem;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
             align-items: start;
+        }
+
+        .about-text {
+            font-size: 1.05rem;
+            line-height: 2;
+            color: var(--bark);
         }
 
         .about-text p {
             margin-bottom: 1.5rem;
-            color: var(--ink-soft);
-            font-size: 1.05rem;
-            line-height: 2;
         }
 
-        .about-text p:last-child {
-            margin-bottom: 0;
-        }
-
-        .about-aside {
+        .about-cards {
             display: flex;
             flex-direction: column;
-            gap: 2.5rem;
+            gap: 1.5rem;
         }
 
         .about-card {
-            padding: 2.5rem;
-            background: var(--parchment);
+            background: var(--cream);
+            padding: 2rem;
+            border-radius: 20px;
             position: relative;
+            overflow: hidden;
         }
 
         .about-card::before {
@@ -439,473 +381,319 @@
             position: absolute;
             top: 0;
             left: 0;
-            width: 3px;
-            height: 50px;
-            background: var(--gtd-orange);
+            width: 4px;
+            height: 100%;
+            background: var(--sage);
+            border-radius: 4px 0 0 4px;
         }
 
-        .about-card.education::before {
-            background: var(--accent-blue);
+        .about-card.terracotta::before {
+            background: var(--terracotta);
         }
 
-        .about-card.languages::before {
-            background: var(--crucial-green);
+        .about-card.moss::before {
+            background: var(--moss);
         }
 
-        .stat-number {
-            font-family: 'Cormorant Garamond', Georgia, serif;
-            font-size: 4rem;
-            font-weight: 300;
-            color: var(--ink);
-            line-height: 1;
-            letter-spacing: -0.03em;
-        }
-
-        .stat-label {
-            color: var(--ink-muted);
-            font-size: 0.7rem;
-            letter-spacing: 0.2em;
-            text-transform: uppercase;
-            margin-top: 0.75rem;
-            font-weight: 400;
-        }
-
-        .stat-description {
-            font-family: 'Cormorant Garamond', Georgia, serif;
-            color: var(--ink-soft);
-            font-size: 1.05rem;
-            margin-top: 1.25rem;
-            font-style: italic;
-            line-height: 1.7;
-        }
-
-        .about-card-title {
-            font-size: 0.7rem;
-            letter-spacing: 0.2em;
-            text-transform: uppercase;
-            color: var(--stone);
-            margin-bottom: 1rem;
-            font-weight: 400;
-        }
-
-        .about-card-value {
-            font-family: 'Cormorant Garamond', Georgia, serif;
-            font-size: 1.35rem;
-            color: var(--ink);
-            font-weight: 400;
-            line-height: 1.4;
-        }
-
-        .about-card-note {
-            color: var(--ink-muted);
-            font-size: 0.9rem;
-            margin-top: 0.5rem;
-        }
-
-        .languages-list {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.5rem;
-            margin-top: 1rem;
-        }
-
-        .language-tag {
-            font-size: 0.75rem;
-            letter-spacing: 0.05em;
-            color: var(--ink-soft);
-            padding: 0.4rem 0.8rem;
-            border: 1px solid var(--border-subtle);
-            background: var(--cream);
-        }
-
-        .language-tag.native {
-            border-color: var(--crucial-green);
-            color: var(--crucial-green);
-        }
-
-        /* Projects Section */
-        .projects-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 2rem;
-        }
-
-        .project-card {
-            padding: 2.5rem;
-            background: var(--parchment);
-            position: relative;
-            transition: all 0.4s ease;
-            text-decoration: none;
-            color: inherit;
-            display: block;
-        }
-
-        .project-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 0;
-            height: 3px;
-            background: var(--gtd-orange);
-            transition: width 0.4s ease;
-        }
-
-        .project-card:hover::before {
-            width: 100%;
-        }
-
-        .project-card:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 12px 40px rgba(26, 25, 22, 0.08);
-        }
-
-        .project-badge {
-            display: inline-block;
-            font-size: 0.6rem;
-            letter-spacing: 0.15em;
-            text-transform: uppercase;
-            color: var(--stone);
-            padding: 0.35rem 0.7rem;
-            border: 1px solid var(--border-subtle);
-            margin-bottom: 1.25rem;
-            font-weight: 400;
-        }
-
-        .project-badge.experiment {
-            color: var(--gtd-orange);
-            border-color: var(--gtd-orange);
-        }
-
-        .project-badge.community {
-            color: var(--crucial-green);
-            border-color: var(--crucial-green);
-        }
-
-        .project-badge.software {
-            color: var(--accent-blue);
-            border-color: var(--accent-blue);
-        }
-
-        .project-title {
-            font-family: 'Cormorant Garamond', Georgia, serif;
-            font-size: 1.5rem;
-            font-weight: 400;
-            color: var(--ink);
-            margin-bottom: 0.75rem;
-            line-height: 1.3;
-        }
-
-        .project-description {
-            color: var(--ink-muted);
-            font-size: 0.95rem;
-            line-height: 1.8;
-            margin-bottom: 1.5rem;
-        }
-
-        .project-link {
+        .card-label {
             font-size: 0.75rem;
             letter-spacing: 0.1em;
             text-transform: uppercase;
-            color: var(--ink-soft);
-            display: inline-flex;
-            align-items: center;
+            color: var(--moss);
+            margin-bottom: 0.75rem;
+        }
+
+        .card-value {
+            font-family: 'Libre Baskerville', Georgia, serif;
+            font-size: 1.2rem;
+            color: var(--earth);
+        }
+
+        .card-note {
+            font-size: 0.9rem;
+            color: var(--bark);
+            margin-top: 0.25rem;
+        }
+
+        .stat-number {
+            font-family: 'Libre Baskerville', Georgia, serif;
+            font-size: 3.5rem;
+            color: var(--terracotta);
+            line-height: 1;
+        }
+
+        .stat-inline {
+            display: flex;
+            align-items: baseline;
             gap: 0.5rem;
-            transition: color 0.3s ease;
         }
 
-        .project-card:hover .project-link {
-            color: var(--gtd-orange);
+        .stat-inline .stat-number {
+            font-size: 2.5rem;
         }
 
-        .project-link svg {
-            width: 14px;
-            height: 14px;
-            stroke: currentColor;
-            fill: none;
-            stroke-width: 2;
-            transition: transform 0.3s ease;
+        .stat-inline .stat-suffix {
+            font-family: 'Libre Baskerville', Georgia, serif;
+            font-size: 1.1rem;
+            color: var(--earth);
         }
 
-        .project-card:hover .project-link svg {
-            transform: translateX(4px);
+        .languages-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-top: 0.75rem;
         }
 
-        .project-year {
-            color: var(--stone);
-            font-size: 0.8rem;
-            margin-top: auto;
+        .lang-tag {
+            background: var(--wheat);
+            padding: 0.4rem 0.9rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            color: var(--bark);
         }
 
-        /* Certifications */
-        .cert-section {
-            margin-bottom: 4rem;
+        .lang-tag.native {
+            background: var(--sage);
+            color: var(--milk);
         }
 
-        .cert-section:last-child {
-            margin-bottom: 0;
+        /* Projects */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
         }
 
-        .cert-section-header {
+        .project-card {
+            background: var(--cream);
+            padding: 2rem;
+            border-radius: 20px;
+            text-decoration: none;
+            color: inherit;
+            transition: all 0.4s ease;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(61, 48, 36, 0.1);
+        }
+
+        .project-icon {
+            width: 45px;
+            height: 45px;
+            background: var(--wheat);
+            border-radius: 12px;
             display: flex;
             align-items: center;
-            gap: 1.5rem;
+            justify-content: center;
+            margin-bottom: 1.5rem;
+        }
+
+        .project-icon svg {
+            width: 22px;
+            height: 22px;
+            stroke: var(--moss);
+            fill: none;
+            stroke-width: 1.5;
+        }
+
+        .project-card.experiment .project-icon {
+            background: rgba(198, 123, 92, 0.15);
+        }
+        .project-card.experiment .project-icon svg {
+            stroke: var(--terracotta);
+        }
+
+        .project-card.founder .project-icon {
+            background: rgba(107, 124, 94, 0.15);
+        }
+        .project-card.founder .project-icon svg {
+            stroke: var(--moss);
+        }
+
+        .project-title {
+            font-family: 'Libre Baskerville', Georgia, serif;
+            font-size: 1.25rem;
+            margin-bottom: 0.75rem;
+            color: var(--earth);
+        }
+
+        .project-description {
+            font-size: 0.95rem;
+            color: var(--bark);
+            line-height: 1.7;
+            flex-grow: 1;
+        }
+
+        .project-meta {
+            margin-top: 1.5rem;
+            font-size: 0.8rem;
+            color: var(--moss);
+        }
+
+        /* Credentials */
+        .credentials-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+        }
+
+        .credential-group {
+            background: var(--cream);
+            padding: 2.5rem;
+            border-radius: 24px;
+        }
+
+        .credential-group-header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
             margin-bottom: 2rem;
-            padding-bottom: 1rem;
-            border-bottom: 1px solid var(--border-subtle);
+            padding-bottom: 1.5rem;
+            border-bottom: 1px solid var(--sand);
         }
 
-        .cert-section-logo {
-            width: 120px;
-            opacity: 0.9;
+        .credential-group-logo {
+            width: 100px;
         }
 
-        .cert-section-logo img {
+        .credential-group-logo img {
             max-width: 100%;
             height: auto;
-            max-height: 28px;
+            max-height: 24px;
         }
 
-        .cert-section-title {
-            font-family: 'Cormorant Garamond', Georgia, serif;
-            font-size: 1.1rem;
-            font-weight: 400;
-            color: var(--ink-soft);
-            letter-spacing: 0.02em;
+        .credential-group-note {
+            font-size: 0.85rem;
+            color: var(--moss);
+            font-style: italic;
+            margin-left: auto;
         }
 
-        .cert-list {
-            display: grid;
-            gap: 0;
+        .credential-list {
+            list-style: none;
         }
 
-        .cert-item {
+        .credential-item {
             display: flex;
             align-items: center;
-            padding: 1.25rem 0;
-            border-bottom: 1px solid var(--border-subtle);
-            transition: all 0.3s ease;
+            padding: 1rem 0;
+            border-bottom: 1px solid var(--wheat);
         }
 
-        .cert-item:last-child {
+        .credential-item:last-child {
             border-bottom: none;
         }
 
-        .cert-item:hover {
-            padding-left: 1rem;
-        }
-
-        .cert-marker {
-            width: 6px;
-            height: 6px;
+        .credential-dot {
+            width: 8px;
+            height: 8px;
+            background: var(--sage);
             border-radius: 50%;
-            background: var(--stone);
-            margin-right: 1.5rem;
+            margin-right: 1rem;
             flex-shrink: 0;
-            transition: all 0.3s ease;
         }
 
-        .cert-item:hover .cert-marker {
-            background: var(--gtd-orange);
-            transform: scale(1.3);
+        .credential-item.master .credential-dot {
+            background: var(--terracotta);
         }
 
-        .cert-item.crucial:hover .cert-marker {
-            background: var(--crucial-red);
+        .credential-name {
+            font-size: 0.95rem;
+            color: var(--bark);
+            flex-grow: 1;
         }
 
-        .cert-item.influence:hover .cert-marker {
-            background: var(--crucial-green);
-        }
-
-        .cert-name {
-            font-size: 1rem;
-            color: var(--ink-soft);
-            font-weight: 300;
-            letter-spacing: 0.01em;
-        }
-
-        .cert-badge {
-            margin-left: auto;
+        .credential-badge {
             font-size: 0.65rem;
-            letter-spacing: 0.15em;
+            letter-spacing: 0.1em;
             text-transform: uppercase;
-            color: var(--stone);
-            padding: 0.4rem 0.8rem;
-            border: 1px solid var(--border-subtle);
-            font-weight: 400;
+            color: var(--terracotta);
+            background: rgba(198, 123, 92, 0.1);
+            padding: 0.3rem 0.6rem;
+            border-radius: 20px;
         }
 
-        /* Contact Section */
+        /* Contact */
         .contact-section {
-            background: var(--parchment);
-            margin: 0 -3rem;
-            padding: 7rem 3rem;
-        }
-
-        .contact-inner {
-            max-width: 700px;
-            margin: 0 auto;
+            background: var(--cream);
+            margin: 0 -2.5rem;
+            padding: 6rem 2.5rem;
+            border-radius: 40px 40px 0 0;
             text-align: center;
         }
 
-        .contact-inner .section-title {
-            margin-bottom: 1rem;
-        }
-
         .contact-intro {
-            font-family: 'Cormorant Garamond', Georgia, serif;
-            font-size: 1.25rem;
-            color: var(--ink-muted);
+            font-family: 'Libre Baskerville', Georgia, serif;
             font-style: italic;
+            font-size: 1.15rem;
+            color: var(--bark);
             max-width: 450px;
-            margin: 0 auto 3.5rem;
-            line-height: 1.7;
+            margin: 0 auto 3rem;
         }
 
         .contact-links {
             display: flex;
             justify-content: center;
-            gap: 3rem;
+            gap: 1.5rem;
         }
 
         .contact-link {
             display: flex;
-            flex-direction: column;
             align-items: center;
-            gap: 1rem;
+            gap: 0.75rem;
+            padding: 1rem 1.75rem;
+            background: var(--milk);
+            border-radius: 50px;
             text-decoration: none;
-            color: var(--ink-soft);
+            color: var(--bark);
+            font-weight: 500;
             transition: all 0.3s ease;
-            padding: 1.5rem 2rem;
         }
 
         .contact-link:hover {
-            color: var(--ink);
+            background: var(--terracotta);
+            color: var(--milk);
+            transform: translateY(-2px);
         }
 
-        .contact-icon {
-            width: 48px;
-            height: 48px;
-            border: 1px solid var(--border-medium);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: all 0.4s ease;
+        .contact-link:hover svg {
+            stroke: var(--milk);
         }
 
-        .contact-link:hover .contact-icon {
-            background: var(--ink);
-            border-color: var(--ink);
-        }
-
-        .contact-link:hover .contact-icon svg {
-            stroke: var(--cream);
-        }
-
-        .contact-icon svg {
+        .contact-link svg {
             width: 20px;
             height: 20px;
-            stroke: var(--ink-soft);
+            stroke: var(--moss);
             fill: none;
             stroke-width: 1.5;
-            transition: stroke 0.4s ease;
-        }
-
-        .contact-label {
-            font-size: 0.75rem;
-            letter-spacing: 0.2em;
-            text-transform: uppercase;
-            font-weight: 400;
+            transition: stroke 0.3s ease;
         }
 
         /* Footer */
         footer {
-            color: var(--stone);
+            background: var(--cream);
+            padding: 2rem 2.5rem;
             text-align: center;
-            padding: 3rem;
-            font-size: 0.8rem;
-            letter-spacing: 0.05em;
-        }
-
-        /* Animations */
-        @keyframes fadeUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        .hero-eyebrow,
-        .hero-text h1,
-        .hero-text .title,
-        .hero-text > p,
-        .hero-buttons {
-            opacity: 0;
-            animation: fadeUp 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards;
-        }
-
-        .hero-eyebrow { animation-delay: 0.1s; }
-        .hero-text h1 { animation-delay: 0.2s; }
-        .hero-text .title { animation-delay: 0.3s; }
-        .hero-text > p { animation-delay: 0.4s; }
-        .hero-buttons { animation-delay: 0.5s; }
-
-        .hero-image {
-            opacity: 0;
-            animation: fadeUp 1s cubic-bezier(0.4, 0, 0.2, 1) forwards;
-            animation-delay: 0.2s;
+            font-size: 0.85rem;
+            color: var(--moss);
         }
 
         /* Responsive */
         @media (max-width: 900px) {
-            main {
-                padding: 0 2rem;
-            }
-
-            nav .container {
-                padding: 0 2rem;
-            }
-
-            .hero-content {
-                grid-template-columns: 1fr;
-                gap: 3rem;
-            }
-
-            .hero-image {
-                max-width: 280px;
-                margin: 0 auto;
-            }
-
-            .hero-text {
-                text-align: center;
-            }
-
-            .hero-text p {
-                margin: 0 auto;
-            }
-
-            .hero-buttons {
-                justify-content: center;
-            }
-
             .about-content {
                 grid-template-columns: 1fr;
-                gap: 3rem;
             }
 
             .projects-grid {
                 grid-template-columns: 1fr;
             }
 
-            .contact-section {
-                margin: 0 -2rem;
-                padding: 5rem 2rem;
+            .credentials-container {
+                grid-template-columns: 1fr;
             }
         }
 
@@ -914,35 +702,21 @@
                 display: none;
             }
 
-            .hero {
-                padding: 8rem 0 5rem;
-            }
-
-            section {
-                padding: 5rem 0;
+            .hero h1 {
+                font-size: 2.25rem;
             }
 
             .hero-buttons {
                 flex-direction: column;
-                gap: 1rem;
-            }
-
-            .btn-secondary {
-                padding: 0.5rem 0;
+                align-items: center;
             }
 
             .contact-links {
                 flex-direction: column;
-                gap: 1rem;
+                align-items: center;
             }
 
-            .contact-link {
-                flex-direction: row;
-                padding: 1rem;
-                border: 1px solid var(--border-subtle);
-            }
-
-            .cert-badge {
+            .credential-group-note {
                 display: none;
             }
         }
@@ -955,203 +729,186 @@
             <ul>
                 <li><a href="#about">About</a></li>
                 <li><a href="#projects">Projects</a></li>
-                <li><a href="#certifications">Credentials</a></li>
+                <li><a href="#credentials">Credentials</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
         </div>
     </nav>
 
-    <main>
-        <section class="hero">
-            <div class="hero-content">
-                <div class="hero-image">
-                    <img src="profile.jpg" alt="Lars Rothschild Henriksen">
-                </div>
-                <div class="hero-text">
-                    <p class="hero-eyebrow">Director & Master Trainer</p>
-                    <h1>Lars Rothschild Henriksen</h1>
-                    <p class="title">Vital Learning Danmark</p>
-                    <p>Helping leaders and knowledge workers in Denmark achieve clarity, focus, and better decisions through proven methodologies.</p>
-                    <div class="hero-buttons">
-                        <a href="#contact" class="btn btn-primary"><span>Get in Touch</span></a>
-                        <a href="#certifications" class="btn btn-secondary">View Credentials</a>
-                    </div>
-                </div>
+    <section class="hero">
+        <div class="hero-inner">
+            <div class="hero-image">
+                <img src="profile.jpg" alt="Lars Rothschild Henriksen">
             </div>
-        </section>
+            <h1>Lars Rothschild Henriksen</h1>
+            <p class="hero-subtitle">Co-founder & Master Trainer at Vital Learning Danmark</p>
+            <p class="hero-description">Helping leaders and knowledge workers in Denmark achieve clarity, focus, and better decisions through proven methodologies.</p>
+            <div class="hero-buttons">
+                <a href="#contact" class="btn btn-primary">Get in Touch</a>
+                <a href="#credentials" class="btn btn-secondary">View Credentials</a>
+            </div>
+        </div>
+    </section>
 
+    <main>
         <section id="about">
-            <div class="section-divider"></div>
             <div class="section-header">
-                <p class="section-eyebrow">Background</p>
+                <div class="section-icon">
+                    <svg viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                </div>
                 <h2 class="section-title">About</h2>
+                <p class="section-subtitle">A journey in helping others thrive</p>
             </div>
             <div class="about-content">
                 <div class="about-text">
-                    <p>As Director and Master Trainer at Vital Learning Danmark, I specialize in helping leaders and knowledge workers throughout Denmark develop the skills they need to thrive in today's demanding work environment.</p>
+                    <p>As Co-founder and Master Trainer at Vital Learning Danmark, I specialize in helping leaders and knowledge workers throughout Denmark develop the skills they need to thrive in today's demanding work environment.</p>
                     <p>With certifications as a Getting Things Done® (GTD) Master Trainer and Crucial Conversations Master Trainer, I bring world-class methodologies to organizations seeking to improve productivity, communication, and decision-making.</p>
                     <p>Vital Learning Danmark is a Crucial Learning licensee, ensuring that our training meets the highest international standards.</p>
                 </div>
-                <aside class="about-aside">
+                <div class="about-cards">
+                    <div class="about-card terracotta">
+                        <p class="card-label">GTD Practitioner</p>
+                        <div class="stat-inline">
+                            <span class="stat-number">Since 2008</span>
+                        </div>
+                        <p class="card-note">Living and teaching the methodology for over 15 years.</p>
+                    </div>
                     <div class="about-card">
-                        <div class="stat-number">10+</div>
-                        <div class="stat-label">Years of Experience</div>
-                        <p class="stat-description">Dedicated to transforming how professionals work, communicate, and lead.</p>
+                        <p class="card-label">Education</p>
+                        <p class="card-value">Syddansk Universitet</p>
+                        <p class="card-note">Master's Degree, Systems Software Engineering</p>
                     </div>
-                    <div class="about-card education">
-                        <p class="about-card-title">Education</p>
-                        <p class="about-card-value">Syddansk Universitet</p>
-                        <p class="about-card-note">Systems Software Engineering</p>
-                    </div>
-                    <div class="about-card languages">
-                        <p class="about-card-title">Languages</p>
-                        <div class="languages-list">
-                            <span class="language-tag native">Danish</span>
-                            <span class="language-tag">English</span>
-                            <span class="language-tag">Norwegian</span>
-                            <span class="language-tag">Swedish</span>
-                            <span class="language-tag">German</span>
+                    <div class="about-card">
+                        <p class="card-label">Languages</p>
+                        <div class="languages-grid">
+                            <span class="lang-tag native">Danish</span>
+                            <span class="lang-tag">English</span>
+                            <span class="lang-tag">Norwegian</span>
+                            <span class="lang-tag">Swedish</span>
+                            <span class="lang-tag">German</span>
                         </div>
                     </div>
-                </aside>
+                </div>
             </div>
         </section>
 
         <section id="projects">
-            <div class="section-divider"></div>
             <div class="section-header">
-                <p class="section-eyebrow">Initiatives</p>
+                <div class="section-icon">
+                    <svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+                </div>
                 <h2 class="section-title">Projects</h2>
-                <p class="section-subtitle">Tools, communities, and experiments exploring productivity and collaboration.</p>
+                <p class="section-subtitle">Ventures and communities I've cultivated</p>
             </div>
             <div class="projects-grid">
-                <a href="https://larsweekly.com" target="_blank" rel="noopener" class="project-card">
-                    <span class="project-badge experiment">Experiment</span>
+                <a href="https://vitallearning.dk" target="_blank" class="project-card founder">
+                    <div class="project-icon">
+                        <svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+                    </div>
+                    <h3 class="project-title">Vital Learning Danmark</h3>
+                    <p class="project-description">Co-founded Denmark's leading training company for GTD and Crucial Learning methodologies, helping organizations transform how they work and communicate.</p>
+                    <p class="project-meta">Co-founder</p>
+                </a>
+                <a href="https://larsweekly.com" target="_blank" class="project-card experiment">
+                    <div class="project-icon">
+                        <svg viewBox="0 0 24 24"><path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"/><path d="M12 6v6l4 2"/></svg>
+                    </div>
                     <h3 class="project-title">LarsWeekly</h3>
-                    <p class="project-description">A Weekly Review tracking tool designed to help GTD practitioners maintain their weekly review habit and stay on top of their commitments.</p>
-                    <span class="project-link">
-                        Visit larsweekly.com
-                        <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-                    </span>
+                    <p class="project-description">A Weekly Review tracking tool designed to help GTD practitioners maintain their weekly review habit.</p>
+                    <p class="project-meta">Experiment</p>
                 </a>
-                <a href="https://www.meetup.com/gtd-copenhagen/" target="_blank" rel="noopener" class="project-card">
-                    <span class="project-badge community">Community</span>
+                <a href="https://www.meetup.com/gtd-copenhagen/" target="_blank" class="project-card">
+                    <div class="project-icon">
+                        <svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                    </div>
                     <h3 class="project-title">GTD Copenhagen & Aarhus</h3>
-                    <p class="project-description">Founded two GTD meetup groups in Denmark's largest cities, creating spaces for productivity enthusiasts to learn and share experiences.</p>
-                    <span class="project-link">
-                        Founded 2015
-                        <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-                    </span>
+                    <p class="project-description">Founded two GTD meetup groups in Denmark's largest cities, creating spaces for productivity enthusiasts.</p>
+                    <p class="project-meta">Community / Founded 2015</p>
                 </a>
-                <div class="project-card" style="cursor: default;">
-                    <span class="project-badge software">Software</span>
-                    <h3 class="project-title">eeTask</h3>
-                    <p class="project-description">Co-created a task and project management software, applying GTD principles to help teams and individuals organize their work effectively.</p>
-                    <span class="project-link" style="color: var(--stone);">
-                        Co-creator
-                    </span>
-                </div>
             </div>
         </section>
 
-        <section id="certifications">
-            <div class="section-divider"></div>
+        <section id="credentials">
             <div class="section-header">
-                <p class="section-eyebrow">Professional</p>
+                <div class="section-icon">
+                    <svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="7"/><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"/></svg>
+                </div>
                 <h2 class="section-title">Credentials</h2>
-                <p class="section-subtitle">Internationally recognized certifications ensuring the highest quality of training.</p>
+                <p class="section-subtitle">Internationally recognized certifications</p>
             </div>
-
-            <div class="cert-section">
-                <div class="cert-section-header">
-                    <div class="cert-section-logo">
-                        <img src="logos/gtd.svg" alt="Getting Things Done">
+            <div class="credentials-container">
+                <div class="credential-group">
+                    <div class="credential-group-header">
+                        <div class="credential-group-logo">
+                            <img src="logos/gtd.svg" alt="Getting Things Done">
+                        </div>
+                        <span class="credential-group-note">Using GTD since 2008</span>
                     </div>
-                    <span class="cert-section-title">Getting Things Done®</span>
+                    <ul class="credential-list">
+                        <li class="credential-item master">
+                            <span class="credential-dot"></span>
+                            <span class="credential-name">Master Trainer</span>
+                            <span class="credential-badge">Highest</span>
+                        </li>
+                        <li class="credential-item">
+                            <span class="credential-dot"></span>
+                            <span class="credential-name">Level 2 Trainer</span>
+                        </li>
+                        <li class="credential-item">
+                            <span class="credential-dot"></span>
+                            <span class="credential-name">Level 3 Trainer</span>
+                        </li>
+                        <li class="credential-item">
+                            <span class="credential-dot"></span>
+                            <span class="credential-name">Executive Coach</span>
+                        </li>
+                    </ul>
                 </div>
-                <div class="cert-list">
-                    <div class="cert-item">
-                        <span class="cert-marker"></span>
-                        <span class="cert-name">Master Trainer</span>
-                        <span class="cert-badge">Highest Level</span>
+                <div class="credential-group">
+                    <div class="credential-group-header">
+                        <div class="credential-group-logo">
+                            <img src="logos/crucial-conversations.svg" alt="Crucial Learning">
+                        </div>
                     </div>
-                    <div class="cert-item">
-                        <span class="cert-marker"></span>
-                        <span class="cert-name">Level 2 Trainer</span>
-                    </div>
-                    <div class="cert-item">
-                        <span class="cert-marker"></span>
-                        <span class="cert-name">Level 3 Trainer</span>
-                    </div>
-                    <div class="cert-item">
-                        <span class="cert-marker"></span>
-                        <span class="cert-name">Executive Coach</span>
-                    </div>
-                </div>
-            </div>
-
-            <div class="cert-section">
-                <div class="cert-section-header">
-                    <div class="cert-section-logo">
-                        <img src="logos/crucial-conversations.svg" alt="Crucial Learning">
-                    </div>
-                    <span class="cert-section-title">Crucial Learning</span>
-                </div>
-                <div class="cert-list">
-                    <div class="cert-item crucial">
-                        <span class="cert-marker"></span>
-                        <span class="cert-name">Crucial Conversations Master Trainer — Mastering Dialogue</span>
-                        <span class="cert-badge">Highest Level</span>
-                    </div>
-                    <div class="cert-item crucial">
-                        <span class="cert-marker"></span>
-                        <span class="cert-name">Crucial Conversations Certified Trainer — Accountability</span>
-                    </div>
-                    <div class="cert-item influence">
-                        <span class="cert-marker"></span>
-                        <span class="cert-name">Crucial Influence Certified Trainer</span>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="contact" class="contact-section">
-            <div class="contact-inner">
-                <p class="section-eyebrow">Connect</p>
-                <h2 class="section-title">Let's Talk</h2>
-                <p class="contact-intro">Ready to transform your productivity and communication? I'd be delighted to hear from you.</p>
-                <div class="contact-links">
-                    <a href="mailto:lars@vitallearning.dk" class="contact-link">
-                        <span class="contact-icon">
-                            <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-                        </span>
-                        <span class="contact-label">Email</span>
-                    </a>
-                    <a href="https://www.linkedin.com/in/larsh/" class="contact-link" target="_blank" rel="noopener">
-                        <span class="contact-icon">
-                            <svg viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
-                        </span>
-                        <span class="contact-label">LinkedIn</span>
-                    </a>
+                    <ul class="credential-list">
+                        <li class="credential-item master">
+                            <span class="credential-dot"></span>
+                            <span class="credential-name">Crucial Conversations Master Trainer</span>
+                            <span class="credential-badge">Highest</span>
+                        </li>
+                        <li class="credential-item">
+                            <span class="credential-dot"></span>
+                            <span class="credential-name">Crucial Conversations — Accountability</span>
+                        </li>
+                        <li class="credential-item">
+                            <span class="credential-dot"></span>
+                            <span class="credential-name">Crucial Influence Certified Trainer</span>
+                        </li>
+                    </ul>
                 </div>
             </div>
         </section>
     </main>
 
+    <section id="contact" class="contact-section">
+        <div class="section-header">
+            <h2 class="section-title">Let's Connect</h2>
+            <p class="contact-intro">Ready to transform your productivity and communication? I'd be delighted to hear from you.</p>
+        </div>
+        <div class="contact-links">
+            <a href="mailto:lars@vitallearning.dk" class="contact-link">
+                <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                Email
+            </a>
+            <a href="https://www.linkedin.com/in/larsh/" target="_blank" class="contact-link">
+                <svg viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+                LinkedIn
+            </a>
+        </div>
+    </section>
+
     <footer>
         <p>&copy; 2026 Lars Rothschild Henriksen</p>
     </footer>
-
-    <script>
-        // Subtle nav scroll effect
-        const nav = document.querySelector('nav');
-        window.addEventListener('scroll', () => {
-            if (window.scrollY > 50) {
-                nav.classList.add('scrolled');
-            } else {
-                nav.classList.remove('scrolled');
-            }
-        });
-    </script>
 </body>
 </html>
