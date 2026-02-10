@@ -20,9 +20,16 @@
         },
         "url": "https://larshenriksen.com",
         "sameAs": [
-            "https://www.linkedin.com/in/larsh/"
+            "https://www.linkedin.com/in/larsh/",
+            "https://larsweekly.com"
         ],
         "email": "lars@vitallearning.dk",
+        "alumniOf": {
+            "@type": "CollegeOrUniversity",
+            "name": "Syddansk Universitet",
+            "url": "https://www.sdu.dk"
+        },
+        "knowsLanguage": ["da", "en", "no", "sv", "de"],
         "knowsAbout": [
             "Getting Things Done (GTD)",
             "GTD Master Training",
@@ -75,7 +82,7 @@
     </script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
     <style>
         * {
             margin: 0;
@@ -84,15 +91,19 @@
         }
 
         :root {
-            --gtd-orange: #e65300;
-            --crucial-red: #ec1e31;
-            --crucial-green: #63AD6D;
-            --text: #1a1a1a;
-            --text-light: #555;
-            --text-muted: #888;
-            --bg: #ffffff;
-            --bg-subtle: #f9f9f9;
-            --border: #eee;
+            --ink: #1a1916;
+            --ink-soft: #3d3b36;
+            --ink-muted: #7a776e;
+            --stone: #a8a49a;
+            --parchment: #f7f6f3;
+            --cream: #fffef9;
+            --warm-white: #fdfcfa;
+            --gtd-orange: #c4520a;
+            --crucial-red: #b8232e;
+            --crucial-green: #4a8a52;
+            --accent-blue: #3d6b99;
+            --border-subtle: rgba(26, 25, 22, 0.08);
+            --border-medium: rgba(26, 25, 22, 0.12);
         }
 
         html {
@@ -100,10 +111,21 @@
         }
 
         body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-            line-height: 1.7;
-            color: var(--text);
-            background: var(--bg);
+            font-family: 'Jost', sans-serif;
+            font-weight: 300;
+            line-height: 1.8;
+            color: var(--ink);
+            background: var(--cream);
+            font-size: 16px;
+            letter-spacing: 0.01em;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* Typography */
+        h1, h2, h3 {
+            font-family: 'Cormorant Garamond', Georgia, serif;
+            font-weight: 400;
+            letter-spacing: -0.02em;
         }
 
         /* Navigation */
@@ -111,27 +133,35 @@
             position: fixed;
             top: 0;
             width: 100%;
-            background: rgba(255, 255, 255, 0.98);
-            backdrop-filter: blur(10px);
-            padding: 1.25rem 2rem;
+            background: rgba(253, 252, 250, 0.92);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            padding: 1.5rem 0;
             z-index: 1000;
-            border-bottom: 1px solid var(--border);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        nav.scrolled {
+            padding: 1rem 0;
+            box-shadow: 0 1px 0 var(--border-subtle);
         }
 
         nav .container {
-            max-width: 900px;
+            max-width: 1100px;
             margin: 0 auto;
+            padding: 0 3rem;
             display: flex;
             justify-content: space-between;
             align-items: center;
         }
 
         nav .logo {
-            font-weight: 700;
-            font-size: 1.1rem;
-            color: var(--text);
+            font-family: 'Cormorant Garamond', Georgia, serif;
+            font-weight: 500;
+            font-size: 1.25rem;
+            color: var(--ink);
             text-decoration: none;
-            letter-spacing: -0.02em;
+            letter-spacing: 0.02em;
         }
 
         nav ul {
@@ -142,21 +172,39 @@
 
         nav a {
             text-decoration: none;
-            color: var(--text-light);
-            font-weight: 500;
-            font-size: 0.9rem;
-            transition: color 0.2s ease;
+            color: var(--ink-muted);
+            font-weight: 400;
+            font-size: 0.8rem;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            transition: color 0.3s ease;
+            position: relative;
+        }
+
+        nav ul a::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 0;
+            height: 1px;
+            background: var(--ink);
+            transition: width 0.3s ease;
+        }
+
+        nav ul a:hover::after {
+            width: 100%;
         }
 
         nav a:hover {
-            color: var(--gtd-orange);
+            color: var(--ink);
         }
 
         /* Main content */
         main {
-            max-width: 900px;
+            max-width: 1100px;
             margin: 0 auto;
-            padding: 0 2rem;
+            padding: 0 3rem;
         }
 
         /* Hero Section */
@@ -164,273 +212,678 @@
             min-height: 100vh;
             display: flex;
             align-items: center;
-            padding: 8rem 0 6rem;
+            padding: 10rem 0 8rem;
         }
 
         .hero-content {
-            display: flex;
+            display: grid;
+            grid-template-columns: 1fr 1.5fr;
+            gap: 6rem;
             align-items: center;
-            gap: 4rem;
             width: 100%;
         }
 
         .hero-image {
-            flex-shrink: 0;
+            position: relative;
+        }
+
+        .hero-image::before {
+            content: '';
+            position: absolute;
+            top: -20px;
+            left: -20px;
+            right: 20px;
+            bottom: 20px;
+            border: 1px solid var(--border-medium);
+            z-index: -1;
         }
 
         .hero-image img {
-            width: 200px;
-            height: 200px;
-            border-radius: 50%;
+            width: 100%;
+            aspect-ratio: 1;
             object-fit: cover;
-            border: 4px solid var(--border);
+            filter: grayscale(15%) contrast(1.02);
+            transition: filter 0.6s ease;
         }
 
-        .hero-text h1 {
-            font-size: 2.75rem;
-            font-weight: 700;
-            margin-bottom: 0.5rem;
-            line-height: 1.1;
-            letter-spacing: -0.03em;
-            color: var(--text);
+        .hero-image:hover img {
+            filter: grayscale(0%) contrast(1);
         }
 
-        .hero-text .title {
-            font-size: 1.25rem;
-            color: var(--text-light);
+        .hero-text {
+            padding: 2rem 0;
+        }
+
+        .hero-eyebrow {
+            font-size: 0.75rem;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: var(--stone);
             margin-bottom: 1.5rem;
             font-weight: 400;
         }
 
+        .hero-text h1 {
+            font-size: clamp(2.5rem, 5vw, 3.5rem);
+            font-weight: 300;
+            margin-bottom: 1rem;
+            line-height: 1.15;
+            color: var(--ink);
+        }
+
+        .hero-text .title {
+            font-family: 'Cormorant Garamond', Georgia, serif;
+            font-size: 1.35rem;
+            font-style: italic;
+            color: var(--ink-soft);
+            margin-bottom: 2.5rem;
+            font-weight: 300;
+        }
+
         .hero-text p {
-            font-size: 1.1rem;
-            color: var(--text-light);
-            max-width: 480px;
-            line-height: 1.8;
+            font-size: 1.05rem;
+            color: var(--ink-muted);
+            max-width: 440px;
+            line-height: 1.9;
         }
 
         .hero-buttons {
-            margin-top: 2rem;
+            margin-top: 3rem;
             display: flex;
-            gap: 1rem;
+            gap: 1.5rem;
+            align-items: center;
         }
 
         .btn {
             display: inline-block;
-            padding: 0.875rem 1.75rem;
-            border-radius: 8px;
             text-decoration: none;
-            font-weight: 600;
-            font-size: 0.95rem;
-            transition: all 0.2s ease;
+            font-weight: 400;
+            font-size: 0.8rem;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
         .btn-primary {
-            background: var(--gtd-orange);
-            color: white;
+            padding: 1.1rem 2.2rem;
+            background: var(--ink);
+            color: var(--cream);
+            position: relative;
+            overflow: hidden;
         }
 
-        .btn-primary:hover {
-            background: #cc4a00;
-            transform: translateY(-1px);
+        .btn-primary::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: var(--gtd-orange);
+            transform: translateX(-101%);
+            transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .btn-primary span {
+            position: relative;
+            z-index: 1;
+        }
+
+        .btn-primary:hover::before {
+            transform: translateX(0);
         }
 
         .btn-secondary {
-            background: transparent;
-            color: var(--text);
-            border: 2px solid var(--border);
+            color: var(--ink-muted);
+            padding: 1.1rem 0;
+            position: relative;
+        }
+
+        .btn-secondary::after {
+            content: '';
+            position: absolute;
+            bottom: 0.9rem;
+            left: 0;
+            width: 100%;
+            height: 1px;
+            background: var(--stone);
+            transform: scaleX(0.3);
+            transform-origin: left;
+            transition: transform 0.4s ease;
         }
 
         .btn-secondary:hover {
-            border-color: var(--text-light);
+            color: var(--ink);
+        }
+
+        .btn-secondary:hover::after {
+            transform: scaleX(1);
+            background: var(--ink);
         }
 
         /* Sections */
         section {
-            padding: 5rem 0;
-            border-top: 1px solid var(--border);
+            padding: 7rem 0;
+        }
+
+        .section-divider {
+            width: 60px;
+            height: 1px;
+            background: var(--border-medium);
+            margin-bottom: 4rem;
         }
 
         .section-header {
-            margin-bottom: 3rem;
+            margin-bottom: 4rem;
+        }
+
+        .section-eyebrow {
+            font-size: 0.7rem;
+            letter-spacing: 0.25em;
+            text-transform: uppercase;
+            color: var(--stone);
+            margin-bottom: 1rem;
+            font-weight: 400;
         }
 
         .section-title {
-            font-size: 1.75rem;
-            font-weight: 700;
-            margin-bottom: 0.75rem;
-            color: var(--text);
-            letter-spacing: -0.02em;
+            font-size: clamp(2rem, 4vw, 2.75rem);
+            font-weight: 300;
+            color: var(--ink);
+            line-height: 1.2;
         }
 
         .section-subtitle {
-            color: var(--text-light);
-            font-size: 1.05rem;
-            max-width: 600px;
+            font-family: 'Cormorant Garamond', Georgia, serif;
+            color: var(--ink-muted);
+            font-size: 1.2rem;
+            max-width: 500px;
+            margin-top: 1.25rem;
+            font-style: italic;
+            font-weight: 300;
         }
 
         /* About Section */
         .about-content {
             display: grid;
-            grid-template-columns: 2fr 1fr;
-            gap: 4rem;
+            grid-template-columns: 1.4fr 1fr;
+            gap: 6rem;
             align-items: start;
         }
 
         .about-text p {
-            margin-bottom: 1.25rem;
-            color: var(--text-light);
+            margin-bottom: 1.5rem;
+            color: var(--ink-soft);
             font-size: 1.05rem;
+            line-height: 2;
         }
 
-        .about-stats {
-            background: var(--bg-subtle);
-            padding: 2rem;
-            border-radius: 12px;
-            text-align: center;
+        .about-text p:last-child {
+            margin-bottom: 0;
+        }
+
+        .about-aside {
+            display: flex;
+            flex-direction: column;
+            gap: 2.5rem;
+        }
+
+        .about-card {
+            padding: 2.5rem;
+            background: var(--parchment);
+            position: relative;
+        }
+
+        .about-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 3px;
+            height: 50px;
+            background: var(--gtd-orange);
+        }
+
+        .about-card.education::before {
+            background: var(--accent-blue);
+        }
+
+        .about-card.languages::before {
+            background: var(--crucial-green);
         }
 
         .stat-number {
-            font-size: 3rem;
-            font-weight: 700;
-            color: var(--gtd-orange);
+            font-family: 'Cormorant Garamond', Georgia, serif;
+            font-size: 4rem;
+            font-weight: 300;
+            color: var(--ink);
             line-height: 1;
+            letter-spacing: -0.03em;
         }
 
         .stat-label {
-            color: var(--text-muted);
+            color: var(--ink-muted);
+            font-size: 0.7rem;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            margin-top: 0.75rem;
+            font-weight: 400;
+        }
+
+        .stat-description {
+            font-family: 'Cormorant Garamond', Georgia, serif;
+            color: var(--ink-soft);
+            font-size: 1.05rem;
+            margin-top: 1.25rem;
+            font-style: italic;
+            line-height: 1.7;
+        }
+
+        .about-card-title {
+            font-size: 0.7rem;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: var(--stone);
+            margin-bottom: 1rem;
+            font-weight: 400;
+        }
+
+        .about-card-value {
+            font-family: 'Cormorant Garamond', Georgia, serif;
+            font-size: 1.35rem;
+            color: var(--ink);
+            font-weight: 400;
+            line-height: 1.4;
+        }
+
+        .about-card-note {
+            color: var(--ink-muted);
             font-size: 0.9rem;
             margin-top: 0.5rem;
-            font-weight: 500;
+        }
+
+        .languages-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-top: 1rem;
+        }
+
+        .language-tag {
+            font-size: 0.75rem;
+            letter-spacing: 0.05em;
+            color: var(--ink-soft);
+            padding: 0.4rem 0.8rem;
+            border: 1px solid var(--border-subtle);
+            background: var(--cream);
+        }
+
+        .language-tag.native {
+            border-color: var(--crucial-green);
+            color: var(--crucial-green);
+        }
+
+        /* Projects Section */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+        }
+
+        .project-card {
+            padding: 2.5rem;
+            background: var(--parchment);
+            position: relative;
+            transition: all 0.4s ease;
+            text-decoration: none;
+            color: inherit;
+            display: block;
+        }
+
+        .project-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 0;
+            height: 3px;
+            background: var(--gtd-orange);
+            transition: width 0.4s ease;
+        }
+
+        .project-card:hover::before {
+            width: 100%;
+        }
+
+        .project-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 40px rgba(26, 25, 22, 0.08);
+        }
+
+        .project-badge {
+            display: inline-block;
+            font-size: 0.6rem;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: var(--stone);
+            padding: 0.35rem 0.7rem;
+            border: 1px solid var(--border-subtle);
+            margin-bottom: 1.25rem;
+            font-weight: 400;
+        }
+
+        .project-badge.experiment {
+            color: var(--gtd-orange);
+            border-color: var(--gtd-orange);
+        }
+
+        .project-badge.community {
+            color: var(--crucial-green);
+            border-color: var(--crucial-green);
+        }
+
+        .project-badge.software {
+            color: var(--accent-blue);
+            border-color: var(--accent-blue);
+        }
+
+        .project-title {
+            font-family: 'Cormorant Garamond', Georgia, serif;
+            font-size: 1.5rem;
+            font-weight: 400;
+            color: var(--ink);
+            margin-bottom: 0.75rem;
+            line-height: 1.3;
+        }
+
+        .project-description {
+            color: var(--ink-muted);
+            font-size: 0.95rem;
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+        }
+
+        .project-link {
+            font-size: 0.75rem;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: var(--ink-soft);
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: color 0.3s ease;
+        }
+
+        .project-card:hover .project-link {
+            color: var(--gtd-orange);
+        }
+
+        .project-link svg {
+            width: 14px;
+            height: 14px;
+            stroke: currentColor;
+            fill: none;
+            stroke-width: 2;
+            transition: transform 0.3s ease;
+        }
+
+        .project-card:hover .project-link svg {
+            transform: translateX(4px);
+        }
+
+        .project-year {
+            color: var(--stone);
+            font-size: 0.8rem;
+            margin-top: auto;
         }
 
         /* Certifications */
         .cert-section {
-            margin-bottom: 3rem;
+            margin-bottom: 4rem;
         }
 
         .cert-section:last-child {
             margin-bottom: 0;
         }
 
-        .cert-section-title {
-            font-size: 0.85rem;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 0.1em;
-            color: var(--text-muted);
-            margin-bottom: 1.5rem;
+        .cert-section-header {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+            padding-bottom: 1rem;
+            border-bottom: 1px solid var(--border-subtle);
         }
 
-        .cert-grid {
-            display: flex;
-            flex-direction: column;
-            gap: 1rem;
+        .cert-section-logo {
+            width: 120px;
+            opacity: 0.9;
+        }
+
+        .cert-section-logo img {
+            max-width: 100%;
+            height: auto;
+            max-height: 28px;
+        }
+
+        .cert-section-title {
+            font-family: 'Cormorant Garamond', Georgia, serif;
+            font-size: 1.1rem;
+            font-weight: 400;
+            color: var(--ink-soft);
+            letter-spacing: 0.02em;
+        }
+
+        .cert-list {
+            display: grid;
+            gap: 0;
         }
 
         .cert-item {
             display: flex;
             align-items: center;
-            gap: 1.5rem;
-            padding: 1.25rem 1.5rem;
-            background: var(--bg-subtle);
-            border-radius: 12px;
-            transition: all 0.2s ease;
+            padding: 1.25rem 0;
+            border-bottom: 1px solid var(--border-subtle);
+            transition: all 0.3s ease;
+        }
+
+        .cert-item:last-child {
+            border-bottom: none;
         }
 
         .cert-item:hover {
-            background: #f0f0f0;
+            padding-left: 1rem;
         }
 
-        .cert-logo {
-            width: 140px;
+        .cert-marker {
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background: var(--stone);
+            margin-right: 1.5rem;
             flex-shrink: 0;
-            display: flex;
-            align-items: center;
+            transition: all 0.3s ease;
         }
 
-        .cert-logo img {
-            max-width: 100%;
-            height: auto;
-            max-height: 32px;
+        .cert-item:hover .cert-marker {
+            background: var(--gtd-orange);
+            transform: scale(1.3);
+        }
+
+        .cert-item.crucial:hover .cert-marker {
+            background: var(--crucial-red);
+        }
+
+        .cert-item.influence:hover .cert-marker {
+            background: var(--crucial-green);
         }
 
         .cert-name {
-            font-weight: 500;
             font-size: 1rem;
-            color: var(--text);
+            color: var(--ink-soft);
+            font-weight: 300;
+            letter-spacing: 0.01em;
+        }
+
+        .cert-badge {
+            margin-left: auto;
+            font-size: 0.65rem;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: var(--stone);
+            padding: 0.4rem 0.8rem;
+            border: 1px solid var(--border-subtle);
+            font-weight: 400;
         }
 
         /* Contact Section */
-        .contact-content {
-            text-align: center;
-            max-width: 500px;
+        .contact-section {
+            background: var(--parchment);
+            margin: 0 -3rem;
+            padding: 7rem 3rem;
+        }
+
+        .contact-inner {
+            max-width: 700px;
             margin: 0 auto;
+            text-align: center;
+        }
+
+        .contact-inner .section-title {
+            margin-bottom: 1rem;
+        }
+
+        .contact-intro {
+            font-family: 'Cormorant Garamond', Georgia, serif;
+            font-size: 1.25rem;
+            color: var(--ink-muted);
+            font-style: italic;
+            max-width: 450px;
+            margin: 0 auto 3.5rem;
+            line-height: 1.7;
         }
 
         .contact-links {
             display: flex;
             justify-content: center;
-            gap: 1rem;
-            margin-top: 2rem;
+            gap: 3rem;
         }
 
         .contact-link {
             display: flex;
+            flex-direction: column;
             align-items: center;
-            gap: 0.5rem;
-            padding: 0.875rem 1.5rem;
-            background: var(--bg-subtle);
-            border-radius: 8px;
+            gap: 1rem;
             text-decoration: none;
-            color: var(--text);
-            font-weight: 500;
-            transition: all 0.2s ease;
+            color: var(--ink-soft);
+            transition: all 0.3s ease;
+            padding: 1.5rem 2rem;
         }
 
         .contact-link:hover {
-            background: var(--gtd-orange);
-            color: white;
+            color: var(--ink);
         }
 
-        .contact-link svg {
-            width: 18px;
-            height: 18px;
-            fill: currentColor;
+        .contact-icon {
+            width: 48px;
+            height: 48px;
+            border: 1px solid var(--border-medium);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.4s ease;
+        }
+
+        .contact-link:hover .contact-icon {
+            background: var(--ink);
+            border-color: var(--ink);
+        }
+
+        .contact-link:hover .contact-icon svg {
+            stroke: var(--cream);
+        }
+
+        .contact-icon svg {
+            width: 20px;
+            height: 20px;
+            stroke: var(--ink-soft);
+            fill: none;
+            stroke-width: 1.5;
+            transition: stroke 0.4s ease;
+        }
+
+        .contact-label {
+            font-size: 0.75rem;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            font-weight: 400;
         }
 
         /* Footer */
         footer {
-            border-top: 1px solid var(--border);
-            color: var(--text-muted);
+            color: var(--stone);
             text-align: center;
-            padding: 2rem;
-            font-size: 0.875rem;
+            padding: 3rem;
+            font-size: 0.8rem;
+            letter-spacing: 0.05em;
+        }
+
+        /* Animations */
+        @keyframes fadeUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .hero-eyebrow,
+        .hero-text h1,
+        .hero-text .title,
+        .hero-text > p,
+        .hero-buttons {
+            opacity: 0;
+            animation: fadeUp 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+        }
+
+        .hero-eyebrow { animation-delay: 0.1s; }
+        .hero-text h1 { animation-delay: 0.2s; }
+        .hero-text .title { animation-delay: 0.3s; }
+        .hero-text > p { animation-delay: 0.4s; }
+        .hero-buttons { animation-delay: 0.5s; }
+
+        .hero-image {
+            opacity: 0;
+            animation: fadeUp 1s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+            animation-delay: 0.2s;
         }
 
         /* Responsive */
-        @media (max-width: 768px) {
-            nav ul {
-                display: none;
+        @media (max-width: 900px) {
+            main {
+                padding: 0 2rem;
             }
 
-            .hero {
-                padding: 7rem 0 4rem;
+            nav .container {
+                padding: 0 2rem;
             }
 
             .hero-content {
-                flex-direction: column;
+                grid-template-columns: 1fr;
+                gap: 3rem;
+            }
+
+            .hero-image {
+                max-width: 280px;
+                margin: 0 auto;
+            }
+
+            .hero-text {
                 text-align: center;
-                gap: 2rem;
-            }
-
-            .hero-image img {
-                width: 160px;
-                height: 160px;
-            }
-
-            .hero-text h1 {
-                font-size: 2rem;
             }
 
             .hero-text p {
@@ -443,15 +896,54 @@
 
             .about-content {
                 grid-template-columns: 1fr;
-                gap: 2rem;
+                gap: 3rem;
             }
 
-            .cert-logo {
-                width: 100px;
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-section {
+                margin: 0 -2rem;
+                padding: 5rem 2rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            nav ul {
+                display: none;
+            }
+
+            .hero {
+                padding: 8rem 0 5rem;
+            }
+
+            section {
+                padding: 5rem 0;
+            }
+
+            .hero-buttons {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .btn-secondary {
+                padding: 0.5rem 0;
             }
 
             .contact-links {
                 flex-direction: column;
+                gap: 1rem;
+            }
+
+            .contact-link {
+                flex-direction: row;
+                padding: 1rem;
+                border: 1px solid var(--border-subtle);
+            }
+
+            .cert-badge {
+                display: none;
             }
         }
     </style>
@@ -462,7 +954,8 @@
             <a href="#" class="logo">Lars Rothschild Henriksen</a>
             <ul>
                 <li><a href="#about">About</a></li>
-                <li><a href="#certifications">Certifications</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#certifications">Credentials</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
         </div>
@@ -475,19 +968,22 @@
                     <img src="profile.jpg" alt="Lars Rothschild Henriksen">
                 </div>
                 <div class="hero-text">
+                    <p class="hero-eyebrow">Director & Master Trainer</p>
                     <h1>Lars Rothschild Henriksen</h1>
-                    <p class="title">Director & Master Trainer at Vital Learning Danmark</p>
+                    <p class="title">Vital Learning Danmark</p>
                     <p>Helping leaders and knowledge workers in Denmark achieve clarity, focus, and better decisions through proven methodologies.</p>
                     <div class="hero-buttons">
-                        <a href="#contact" class="btn btn-primary">Get in Touch</a>
-                        <a href="#certifications" class="btn btn-secondary">View Certifications</a>
+                        <a href="#contact" class="btn btn-primary"><span>Get in Touch</span></a>
+                        <a href="#certifications" class="btn btn-secondary">View Credentials</a>
                     </div>
                 </div>
             </div>
         </section>
 
         <section id="about">
+            <div class="section-divider"></div>
             <div class="section-header">
+                <p class="section-eyebrow">Background</p>
                 <h2 class="section-title">About</h2>
             </div>
             <div class="about-content">
@@ -496,88 +992,146 @@
                     <p>With certifications as a Getting Things Done® (GTD) Master Trainer and Crucial Conversations Master Trainer, I bring world-class methodologies to organizations seeking to improve productivity, communication, and decision-making.</p>
                     <p>Vital Learning Danmark is a Crucial Learning licensee, ensuring that our training meets the highest international standards.</p>
                 </div>
-                <div class="about-stats">
-                    <div class="stat-number">10+</div>
-                    <div class="stat-label">Years Experience</div>
+                <aside class="about-aside">
+                    <div class="about-card">
+                        <div class="stat-number">10+</div>
+                        <div class="stat-label">Years of Experience</div>
+                        <p class="stat-description">Dedicated to transforming how professionals work, communicate, and lead.</p>
+                    </div>
+                    <div class="about-card education">
+                        <p class="about-card-title">Education</p>
+                        <p class="about-card-value">Syddansk Universitet</p>
+                        <p class="about-card-note">Systems Software Engineering</p>
+                    </div>
+                    <div class="about-card languages">
+                        <p class="about-card-title">Languages</p>
+                        <div class="languages-list">
+                            <span class="language-tag native">Danish</span>
+                            <span class="language-tag">English</span>
+                            <span class="language-tag">Norwegian</span>
+                            <span class="language-tag">Swedish</span>
+                            <span class="language-tag">German</span>
+                        </div>
+                    </div>
+                </aside>
+            </div>
+        </section>
+
+        <section id="projects">
+            <div class="section-divider"></div>
+            <div class="section-header">
+                <p class="section-eyebrow">Initiatives</p>
+                <h2 class="section-title">Projects</h2>
+                <p class="section-subtitle">Tools, communities, and experiments exploring productivity and collaboration.</p>
+            </div>
+            <div class="projects-grid">
+                <a href="https://larsweekly.com" target="_blank" rel="noopener" class="project-card">
+                    <span class="project-badge experiment">Experiment</span>
+                    <h3 class="project-title">LarsWeekly</h3>
+                    <p class="project-description">A Weekly Review tracking tool designed to help GTD practitioners maintain their weekly review habit and stay on top of their commitments.</p>
+                    <span class="project-link">
+                        Visit larsweekly.com
+                        <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                    </span>
+                </a>
+                <a href="https://www.meetup.com/gtd-copenhagen/" target="_blank" rel="noopener" class="project-card">
+                    <span class="project-badge community">Community</span>
+                    <h3 class="project-title">GTD Copenhagen & Aarhus</h3>
+                    <p class="project-description">Founded two GTD meetup groups in Denmark's largest cities, creating spaces for productivity enthusiasts to learn and share experiences.</p>
+                    <span class="project-link">
+                        Founded 2015
+                        <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                    </span>
+                </a>
+                <div class="project-card" style="cursor: default;">
+                    <span class="project-badge software">Software</span>
+                    <h3 class="project-title">eeTask</h3>
+                    <p class="project-description">Co-created a task and project management software, applying GTD principles to help teams and individuals organize their work effectively.</p>
+                    <span class="project-link" style="color: var(--stone);">
+                        Co-creator
+                    </span>
                 </div>
             </div>
         </section>
 
         <section id="certifications">
+            <div class="section-divider"></div>
             <div class="section-header">
-                <h2 class="section-title">Certifications</h2>
-                <p class="section-subtitle">Internationally recognized credentials that ensure the highest quality of training.</p>
+                <p class="section-eyebrow">Professional</p>
+                <h2 class="section-title">Credentials</h2>
+                <p class="section-subtitle">Internationally recognized certifications ensuring the highest quality of training.</p>
             </div>
 
             <div class="cert-section">
-                <h3 class="cert-section-title">Getting Things Done®</h3>
-                <div class="cert-grid">
+                <div class="cert-section-header">
+                    <div class="cert-section-logo">
+                        <img src="logos/gtd.svg" alt="Getting Things Done">
+                    </div>
+                    <span class="cert-section-title">Getting Things Done®</span>
+                </div>
+                <div class="cert-list">
                     <div class="cert-item">
-                        <div class="cert-logo">
-                            <img src="logos/gtd.svg" alt="GTD">
-                        </div>
+                        <span class="cert-marker"></span>
                         <span class="cert-name">Master Trainer</span>
+                        <span class="cert-badge">Highest Level</span>
                     </div>
                     <div class="cert-item">
-                        <div class="cert-logo">
-                            <img src="logos/gtd.svg" alt="GTD">
-                        </div>
+                        <span class="cert-marker"></span>
                         <span class="cert-name">Level 2 Trainer</span>
                     </div>
                     <div class="cert-item">
-                        <div class="cert-logo">
-                            <img src="logos/gtd.svg" alt="GTD">
-                        </div>
+                        <span class="cert-marker"></span>
                         <span class="cert-name">Level 3 Trainer</span>
                     </div>
                     <div class="cert-item">
-                        <div class="cert-logo">
-                            <img src="logos/gtd.svg" alt="GTD">
-                        </div>
+                        <span class="cert-marker"></span>
                         <span class="cert-name">Executive Coach</span>
                     </div>
                 </div>
             </div>
 
             <div class="cert-section">
-                <h3 class="cert-section-title">Crucial Learning</h3>
-                <div class="cert-grid">
-                    <div class="cert-item">
-                        <div class="cert-logo">
-                            <img src="logos/crucial-conversations.svg" alt="Crucial Conversations">
-                        </div>
-                        <span class="cert-name">Master Trainer - Mastering Dialogue</span>
+                <div class="cert-section-header">
+                    <div class="cert-section-logo">
+                        <img src="logos/crucial-conversations.svg" alt="Crucial Learning">
                     </div>
-                    <div class="cert-item">
-                        <div class="cert-logo">
-                            <img src="logos/crucial-conversations.svg" alt="Crucial Conversations">
-                        </div>
-                        <span class="cert-name">Certified Trainer - Accountability</span>
+                    <span class="cert-section-title">Crucial Learning</span>
+                </div>
+                <div class="cert-list">
+                    <div class="cert-item crucial">
+                        <span class="cert-marker"></span>
+                        <span class="cert-name">Crucial Conversations Master Trainer — Mastering Dialogue</span>
+                        <span class="cert-badge">Highest Level</span>
                     </div>
-                    <div class="cert-item">
-                        <div class="cert-logo">
-                            <img src="logos/crucial-influence.svg" alt="Crucial Influence">
-                        </div>
-                        <span class="cert-name">Certified Trainer - Crucial Influence</span>
+                    <div class="cert-item crucial">
+                        <span class="cert-marker"></span>
+                        <span class="cert-name">Crucial Conversations Certified Trainer — Accountability</span>
+                    </div>
+                    <div class="cert-item influence">
+                        <span class="cert-marker"></span>
+                        <span class="cert-name">Crucial Influence Certified Trainer</span>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section id="contact">
-            <div class="contact-content">
-                <div class="section-header">
-                    <h2 class="section-title">Let's Connect</h2>
-                    <p class="section-subtitle">Ready to transform your productivity and communication?</p>
-                </div>
+        <section id="contact" class="contact-section">
+            <div class="contact-inner">
+                <p class="section-eyebrow">Connect</p>
+                <h2 class="section-title">Let's Talk</h2>
+                <p class="contact-intro">Ready to transform your productivity and communication? I'd be delighted to hear from you.</p>
                 <div class="contact-links">
                     <a href="mailto:lars@vitallearning.dk" class="contact-link">
-                        <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2zM22 6l-10 7L2 6"/></svg>
-                        Email
+                        <span class="contact-icon">
+                            <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                        </span>
+                        <span class="contact-label">Email</span>
                     </a>
                     <a href="https://www.linkedin.com/in/larsh/" class="contact-link" target="_blank" rel="noopener">
-                        <svg viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6zM2 9h4v12H2zM4 6a2 2 0 1 0 0-4 2 2 0 0 0 0 4z"/></svg>
-                        LinkedIn
+                        <span class="contact-icon">
+                            <svg viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+                        </span>
+                        <span class="contact-label">LinkedIn</span>
                     </a>
                 </div>
             </div>
@@ -585,7 +1139,19 @@
     </main>
 
     <footer>
-        <p>&copy; 2026 Lars Rothschild Henriksen. All rights reserved.</p>
+        <p>&copy; 2026 Lars Rothschild Henriksen</p>
     </footer>
+
+    <script>
+        // Subtle nav scroll effect
+        const nav = document.querySelector('nav');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                nav.classList.add('scrolled');
+            } else {
+                nav.classList.remove('scrolled');
+            }
+        });
+    </script>
 </body>
 </html>
