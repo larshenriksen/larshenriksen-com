@@ -1,10 +1,22 @@
 # Lars Rothschild Henriksen
 
-> Director and Master Trainer at Vital Learning Danmark, helping leaders and knowledge workers in Denmark achieve clarity, focus, and better decisions.
+> Co-founder and Master Trainer at Vital Learning Danmark. Lars helps leaders and knowledge workers in Denmark achieve clarity, focus, and better decisions through internationally recognized training methodologies, including Getting Things Done® (GTD) and Crucial Learning programs.
 
 ## About
 
-Lars Rothschild Henriksen is the Director of Vital Learning Danmark, a Crucial Learning licensee in Denmark. He specializes in training leaders and knowledge workers using internationally recognized methodologies, particularly Getting Things Done® (GTD) and Crucial Conversations.
+Lars Rothschild Henriksen is the Co-founder of Vital Learning Danmark, a Crucial Learning licensee in Denmark. He has been a GTD practitioner since 2008, and specializes in training leaders and knowledge workers using proven, internationally recognized methodologies — particularly Getting Things Done® (GTD), Crucial Conversations, and Crucial Influence.
+
+Lars is one of only a small number of certified GTD Master Trainers and Crucial Conversations Master Trainers, holding the highest levels of certification in both disciplines.
+
+He holds a Master's Degree in Systems Software Engineering from Syddansk Universitet (University of Southern Denmark).
+
+## Links
+
+- [Personal Website](https://www.larshenriksen.com): Lars Rothschild Henriksen's professional profile, certifications, and contact information
+- [LinkedIn Profile](https://www.linkedin.com/in/larsh/): Lars Rothschild Henriksen on LinkedIn
+- [Vital Learning Danmark](https://vitallearning.dk): Company website — Crucial Learning licensee in Denmark
+- [LarsWeekly](https://larsweekly.com): A Weekly Review tracking tool for GTD practitioners
+- [GTD Copenhagen Meetup](https://www.meetup.com/gtd-copenhagen/): GTD community meetup group in Copenhagen
 
 ## Contact
 
@@ -15,14 +27,14 @@ Lars Rothschild Henriksen is the Director of Vital Learning Danmark, a Crucial L
 ## Professional Certifications
 
 ### Getting Things Done® (GTD)
-- GTD Master Trainer
+- GTD Master Trainer (highest level)
 - GTD Level 2 Trainer
 - GTD Level 3 Trainer
 - GTD Executive Coach
 
 ### Crucial Learning
-- Crucial Conversations Master Trainer - Mastering Dialogue
-- Crucial Conversations Certified Trainer - Accountability
+- Crucial Conversations Master Trainer — Mastering Dialogue (highest level)
+- Crucial Conversations Certified Trainer — Accountability
 - Crucial Influence Certified Trainer
 
 ## Areas of Expertise
@@ -31,19 +43,40 @@ Lars Rothschild Henriksen is the Director of Vital Learning Danmark, a Crucial L
 - Crucial Conversations training for high-stakes communication
 - Crucial Influence training for behavior change
 - Executive coaching for productivity and effectiveness
-- Corporate training and workshops
+- Corporate training and workshops for organizations in Denmark
 - Leadership development
 - Knowledge worker productivity
 - Decision-making improvement
 
-## Organization
+## Projects
 
-**Vital Learning Danmark**
-- Role: Director
+### Vital Learning Danmark
+Co-founded Denmark's leading training company for GTD and Crucial Learning methodologies, helping organizations transform how they work and communicate.
 - Website: https://vitallearning.dk
+- Role: Co-founder
 - Type: Crucial Learning Licensee
 - Location: Denmark
-- Focus: Professional training in productivity, communication, and influence methodologies
+
+### LarsWeekly
+A Weekly Review tracking tool designed to help GTD practitioners maintain their weekly review habit.
+- Website: https://larsweekly.com
+
+### GTD Copenhagen & Aarhus
+Founded two GTD meetup groups in Denmark's largest cities, creating spaces for productivity enthusiasts.
+- Meetup: https://www.meetup.com/gtd-copenhagen/
+- Founded: 2015
+
+## Education
+
+- Master's Degree, Systems Software Engineering — Syddansk Universitet (University of Southern Denmark)
+
+## Languages
+
+- Danish (native)
+- English
+- Norwegian
+- Swedish
+- German
 
 ## What Lars Can Help With
 
@@ -56,10 +89,10 @@ Lars Rothschild Henriksen is the Director of Vital Learning Danmark, a Crucial L
 ## Key Methodologies
 
 ### Getting Things Done® (GTD)
-A personal productivity methodology developed by David Allen that helps individuals organize tasks, projects, and commitments to achieve stress-free productivity. Lars is certified at the highest levels including Master Trainer and Executive Coach.
+A personal productivity methodology developed by David Allen that helps individuals organize tasks, projects, and commitments to achieve stress-free productivity. Lars has been a GTD practitioner since 2008 and is certified at the highest levels including Master Trainer and Executive Coach.
 
 ### Crucial Conversations
-A methodology for handling high-stakes conversations where opinions vary, emotions run strong, and the outcome significantly impacts relationships or results. Lars is a Master Trainer in this discipline.
+A methodology developed by Crucial Learning (formerly VitalSmarts) for handling high-stakes conversations where opinions vary, emotions run strong, and the outcome significantly impacts relationships or results. Lars is a Master Trainer in this discipline.
 
 ### Crucial Influence
-A methodology for creating rapid, profound, and sustainable behavior change by identifying and addressing the sources of influence that shape human behavior.
+A methodology for creating rapid, profound, and sustainable behavior change by identifying and addressing the six sources of influence that shape human behavior.
