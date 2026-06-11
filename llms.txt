@@ -1,10 +1,10 @@
 # Lars Rothschild Henriksen
 
-> Co-founder and Master Trainer at Vital Learning Danmark. Lars helps leaders and knowledge workers in Denmark achieve clarity, focus, and better decisions through internationally recognized training methodologies, including Getting Things Done® (GTD) and Crucial Learning programs.
+> Co-founder and Master Trainer at Vital Learning Danmark. Lars helps leaders and knowledge workers in Denmark, Greenland and the Faroe Islands achieve clarity, focus, and better decisions through internationally recognized training methodologies, including Getting Things Done® (GTD), Crucial Learning programs, and the Strength Deployment Inventory (SDI).
 
 ## About
 
-Lars Rothschild Henriksen is the Co-founder of Vital Learning Danmark, a Crucial Learning licensee in Denmark. He has been a GTD practitioner since 2008, and specializes in training leaders and knowledge workers using proven, internationally recognized methodologies — particularly Getting Things Done® (GTD), Crucial Conversations, and Crucial Influence.
+Lars Rothschild Henriksen is the Co-founder of Vital Learning Danmark, a Crucial Learning licensee in Denmark. He has been a GTD practitioner since 2008, and specializes in training leaders and knowledge workers throughout Denmark, Greenland and the Faroe Islands using proven, internationally recognized methodologies — particularly Getting Things Done® (GTD), Crucial Conversations, Crucial Influence, and the Strength Deployment Inventory (SDI).
 
 Lars is one of only a small number of certified GTD Master Trainers and Crucial Conversations Master Trainers, holding the highest levels of certification in both disciplines.
 
@@ -37,11 +37,15 @@ He holds a Master's Degree in Systems Software Engineering from Syddansk Univers
 - Crucial Conversations Certified Trainer — Accountability
 - Crucial Influence Certified Trainer
 
+### SDI (Strength Deployment Inventory)
+- Certified SDI Facilitator (2026)
+
 ## Areas of Expertise
 
 - Getting Things Done® (GTD) methodology and training
 - Crucial Conversations training for high-stakes communication
 - Crucial Influence training for behavior change
+- Strength Deployment Inventory (SDI) facilitation for relationship intelligence
 - Executive coaching for productivity and effectiveness
 - Corporate training and workshops for organizations in Denmark
 - Leadership development
@@ -56,6 +60,7 @@ Co-founded Denmark's leading training company for GTD and Crucial Learning metho
 - Role: Co-founder
 - Type: Crucial Learning Licensee
 - Location: Denmark
+- Area served: Denmark, Greenland and the Faroe Islands
 
 ### LarsWeekly
 A Weekly Review tracking tool designed to help GTD practitioners maintain their weekly review habit.
@@ -73,10 +78,10 @@ Founded two GTD meetup groups in Denmark's largest cities, creating spaces for p
 ## Languages
 
 - Danish (native)
-- English
-- Norwegian
-- Swedish
-- German
+- English (fluent)
+- Norwegian (conversational)
+- Swedish (basic understanding)
+- German (basic understanding)
 
 ## What Lars Can Help With
 
@@ -96,3 +101,6 @@ A methodology developed by Crucial Learning (formerly VitalSmarts) for handling 
 
 ### Crucial Influence
 A methodology for creating rapid, profound, and sustainable behavior change by identifying and addressing the six sources of influence that shape human behavior.
+
+### Strength Deployment Inventory (SDI)
+A relationship intelligence assessment that helps teams understand the motives behind behavior and collaborate more effectively. Lars became a certified SDI facilitator in 2026.
