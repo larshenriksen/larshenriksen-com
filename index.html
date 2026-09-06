@@ -3,6 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Security policy. GitHub Pages cannot send custom HTTP headers, so the policies
+         that HTML can express live here. NOT expressible via <meta>: HSTS,
+         frame-ancestors/X-Frame-Options, X-Content-Type-Options, Permissions-Policy.
+         The script-src hash covers the inline <script> at the bottom of this file byte-for-byte.
+         If you edit that script, regenerate the hash:
+           python3 -c "import re,hashlib,base64;s=open('index.html').read();print(base64.b64encode(hashlib.sha256(re.findall(r'<script>(.*?)</script>',s,re.S)[-1].encode()).digest()).decode())"
+         A stale hash only disables the scroll animations (content stays visible via the .js guard). -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'sha256-tDurDXCe+rDCFXAJX0SltinlNImpMfK9ZiIGsmJ/0gw='; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; base-uri 'none'; form-action 'none'; upgrade-insecure-requests">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
     <title>Lars Rothschild Henriksen | Director & Master Trainer</title>
     <meta name="description" content="Lars Rothschild Henriksen is Director and Master Trainer at Vital Learning Danmark, specializing in Getting Things Done (GTD), Crucial Conversations, and SDI training for leaders and knowledge workers in Denmark, Greenland and the Faroe Islands.">
     <meta name="author" content="Lars Rothschild Henriksen">
@@ -182,7 +191,7 @@
             animation: riseIn 0.9s var(--ease-out) forwards;
         }
 
-        .reveal {
+        :where(.js) .reveal {
             opacity: 0;
             transform: translateY(32px);
             transition: opacity 0.8s var(--ease-out), transform 0.8s var(--ease-out);
@@ -1333,6 +1342,9 @@
     </footer>
 
     <script>
+        // Mark JS as running so the CSS only hides .reveal content when it can be revealed again.
+        document.documentElement.classList.add('js');
+
         // Scroll-triggered reveals
         const observer = new IntersectionObserver((entries) => {
             entries.forEach((entry) => {

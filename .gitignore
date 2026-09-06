@@ -1,0 +1,9 @@
+# Local tool state — never commit
+.claude/settings.local.json
+.env
+.env.*
+*.pem
+*.key
+
+# OS noise
+.DS_Store
