@@ -16,6 +16,7 @@ He holds a Master's Degree in Systems Software Engineering from Syddansk Univers
 - [LinkedIn Profile](https://www.linkedin.com/in/larsh/): Lars Rothschild Henriksen on LinkedIn
 - [Vital Learning Danmark](https://vitallearning.dk): Company website — Crucial Learning licensee in Denmark
 - [LarsWeekly](https://larsweekly.com): A Weekly Review tracking tool for GTD practitioners
+- [Walking Points](https://walkingpoints.fm): A personal podcast, automatically produced for one listener, about the topics that listener cares about
 - [GTD Copenhagen Meetup](https://www.meetup.com/gtd-copenhagen/): GTD community meetup group in Copenhagen
 
 ## Contact
@@ -65,6 +66,12 @@ Co-founded Denmark's leading training company for GTD and Crucial Learning metho
 ### LarsWeekly
 A Weekly Review tracking tool designed to help GTD practitioners maintain their weekly review habit.
 - Website: https://larsweekly.com
+
+### Walking Points
+A personal podcast, produced automatically for a single listener. It researches the listener's work, the news that concerns them and the things they are curious about, then turns each briefing into an episode told from one angle: Why does this matter to you? The hosts are disclosed AI voices. Currently in closed beta.
+- Website: https://walkingpoints.fm
+- Role: Creator
+- Status: Closed beta (2026)
 
 ### GTD Copenhagen & Aarhus
 Founded two GTD meetup groups in Denmark's largest cities, creating spaces for productivity enthusiasts.
