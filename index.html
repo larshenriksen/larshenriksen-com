@@ -115,7 +115,7 @@
                 "credentialCategory": "Professional Certification"
             }
         ],
-        "description": "Lars Rothschild Henriksen helps leaders and knowledge workers in Denmark, Greenland and the Faroe Islands achieve clarity, focus, and better decisions through Getting Things Done (GTD), Crucial Conversations, and SDI methodologies. Using GTD since 2008."
+        "description": "Lars Rothschild Henriksen helps leaders and knowledge workers in Denmark, Greenland and the Faroe Islands achieve clarity, focus, and better decisions through Getting Things Done (GTD), Crucial Conversations, and SDI methodologies. Using GTD since 2008. One of only seven people in the world with all possible GTD certifications through David Allen Company. Clients include Novo Nordisk, Maersk, Grundfos, Siemens, EY, Ørsted, Facebook, the Danish Regions and the Danish Health Authorities."
     }
     </script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -605,13 +605,41 @@
             border-bottom-color: var(--copper);
         }
 
-        .about-text p:first-child::first-letter {
+        .about-text > p:first-child::first-letter {
             font-family: var(--serif);
             font-size: 3.4em;
             float: left;
             line-height: 0.85;
             padding-right: 0.12em;
             color: var(--pine);
+        }
+
+        .about-quote {
+            margin: 2.4rem 0 0;
+            padding: 0.4rem 0 0.4rem 1.6rem;
+            border-left: 2px solid var(--copper);
+        }
+
+        .about-quote p {
+            font-family: var(--serif);
+            font-style: italic;
+            font-size: 1.3rem;
+            line-height: 1.6;
+            color: var(--ink);
+            margin-bottom: 0.8rem;
+        }
+
+        .about-quote cite {
+            font-style: normal;
+            font-size: 0.75rem;
+            letter-spacing: 0.14em;
+            text-transform: uppercase;
+            color: var(--copper);
+        }
+
+        .bio-download {
+            margin-top: 3rem;
+            text-align: center;
         }
 
         .about-cards {
@@ -1187,8 +1215,13 @@
             <div class="about-content">
                 <div class="about-text reveal">
                     <p>As Co-founder and Master Trainer at <a href="https://vitallearning.dk" target="_blank" rel="noopener">Vital Learning Danmark</a>, I specialize in helping leaders and knowledge workers throughout Denmark, Greenland and the Faroe Islands develop the skills they need to thrive in today's demanding work environment.</p>
-                    <p>With certifications as a Getting Things Done® (GTD) Master Trainer and Crucial Conversations Master Trainer, I bring world-class methodologies to organizations seeking to improve productivity, communication, and decision-making.</p>
+                    <p>With certifications as a Getting Things Done® (GTD) Master Trainer and Crucial Conversations Master Trainer, I bring world-class methodologies to organizations seeking to improve productivity, communication, and decision-making. I am one of only seven people in the world with all possible GTD certifications through David Allen Company.</p>
+                    <p>I have worked with thousands of people in some of the biggest organizations across Denmark, Greenland and the Faroe Islands, including Novo Nordisk, Maersk, Grundfos, Siemens, EY, Ørsted, Facebook, the Danish Regions and the Danish Health Authorities.</p>
                     <p>Vital Learning Danmark is a Crucial Learning licensee, ensuring that our training meets the highest international standards.</p>
+                    <blockquote class="about-quote">
+                        <p>“Lars is, honestly, a truly stellar trainer. He is clearly ‘living the practices’ and leads by example. I left the seminar with focus and direction!”</p>
+                        <cite>Training participant</cite>
+                    </blockquote>
                 </div>
                 <div class="about-cards">
                     <div class="about-card copper reveal" data-delay="1">
@@ -1199,7 +1232,7 @@
                     <div class="about-card reveal" data-delay="2">
                         <p class="card-label">Education</p>
                         <p class="card-value">Syddansk Universitet</p>
-                        <p class="card-note">Master's Degree, Systems Software Engineering</p>
+                        <p class="card-note">Master's Degree, Software Systems Engineering</p>
                     </div>
                     <div class="about-card reveal" data-delay="3">
                         <p class="card-label">Languages</p>
@@ -1325,6 +1358,9 @@
                     </div>
                 </div>
             </div>
+            <p class="bio-download reveal">
+                <a href="lars-rothschild-henriksen-trainer-bio.pdf" class="btn btn-secondary" target="_blank" rel="noopener">Download trainer bio (PDF)</a>
+            </p>
         </section>
     </main>
 
